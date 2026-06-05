@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<div class="card"><h2>Birthdays</h2><div class="birthday-list">{% for r in rows %}<div><b>{{ r.display_name }}</b><span>{{ r.birthday }}</span></div>{% endfor %}</div></div>{% endblock %}

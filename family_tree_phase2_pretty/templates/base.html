@@ -1,0 +1,5 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Torres-Perez Family Tree</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head><body>
+<header><div><h1>Torres-Perez Family Tree</h1><p>Private family directory and interactive tree</p></div>{% if user %}<nav><a href="{{ url_for('index') }}">Tree</a><a href="{{ url_for('people') }}">People</a><a href="{{ url_for('birthdays') }}">Birthdays</a><a href="{{ url_for('person_new') }}">Add Child</a><a href="{{ url_for('logout') }}">Logout</a></nav>{% endif %}</header>
+<main>{% with messages = get_flashed_messages() %}{% if messages %}<div class="flash">{% for m in messages %}<div>{{m}}</div>{% endfor %}</div>{% endif %}{% endwith %}{% block content %}{% endblock %}</main>
+<footer>Family records can be updated by each person or by the admin.</footer>
+</body></html>

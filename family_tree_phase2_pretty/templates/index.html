@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block content %}
+<section class="toolbar"><input id="search" placeholder="Search family..."><button onclick="expandAll()">Expand All</button><button onclick="collapseAll()">Collapse All</button></section>
+<section class="layout"><div id="tree" class="tree"></div><aside id="details" class="details"><h2>Click a person</h2><p>Details will show here.</p></aside></section>
+<script>window.CURRENT_USER={{ user|tojson }};</script><script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock %}

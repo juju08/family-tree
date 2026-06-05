@@ -1,0 +1,3 @@
+{% extends 'base.html' %}{% block content %}
+<div class="card"><h2>People</h2><p>{% if user.is_admin %}Admin can edit everyone.{% else %}You can edit yourself, your spouse, and your children.{% endif %}</p><div class="people-grid">{% for p in rows %}<a class="person-row" href="{{ url_for('person_edit', person_id=p.id) }}">{% if p.photo %}<img src="{{ url_for('static', filename='uploads/' + p.photo) }}">{% else %}<span class="avatar">{{ p.display_name[0] }}</span>{% endif %}<span><b>{{ p.display_name }}</b><small>{{ p.birthday or 'No birthday' }}</small></span></a>{% endfor %}</div></div>
+{% endblock %}
